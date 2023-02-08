@@ -1,0 +1,12 @@
+ext.builds = [
+        compileSdk: 33,
+        minSdk: 24,
+        targetSdk: 33
+]
+
+ext.versions = [
+        navigation: "2.5.3",
+        koin: "3.2.0",
+        coroutine: "1.6.2",
+        lifecycle: "2.5.1"
+]

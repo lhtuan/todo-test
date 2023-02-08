@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk builds.compileSdk
+
+    defaultConfig {
+        minSdk builds.minSdk
+        targetSdk builds.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    namespace 'com.test.todo.domain'
+}
+
+dependencies {
+    //coroutine
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+
+    testImplementation(platform('org.junit:junit-bom:5.8.2'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testImplementation "org.mockito:mockito-core:4.6.1"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.2"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    //Flow test
+    testImplementation 'app.cash.turbine:turbine:0.8.0'
+}
