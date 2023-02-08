@@ -7,3 +7,8 @@ fun CategoryTbl.toModel() = Category(
     id = categoryId,
     name = name
 )
+
+fun Category.toTable() = CategoryTbl(
+    categoryId = id,
+    name = name
+)

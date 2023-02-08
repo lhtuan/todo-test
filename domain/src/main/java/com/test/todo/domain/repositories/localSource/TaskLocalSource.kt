@@ -6,4 +6,5 @@ import java.util.Calendar
 
 interface TaskLocalSource {
     suspend fun getTasks(date: Calendar): ResultState<List<Task>>
+    suspend fun addTask(task: Task): ResultState<Void>
 }
