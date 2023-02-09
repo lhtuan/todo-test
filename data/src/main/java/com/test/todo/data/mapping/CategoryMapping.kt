@@ -4,11 +4,11 @@ import com.test.todo.data.local.tables.CategoryTbl
 import com.test.todo.domain.models.Category
 
 fun CategoryTbl.toModel() = Category(
-    id = categoryId,
+    id = id,
     name = name
 )
 
 fun Category.toTable() = CategoryTbl(
-    categoryId = id,
+    id = id,
     name = name
 )

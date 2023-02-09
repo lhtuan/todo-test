@@ -5,6 +5,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "category")
 data class CategoryTbl(
-    @PrimaryKey val categoryId: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     val name: String
 )

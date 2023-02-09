@@ -24,7 +24,7 @@ interface TaskDao {
     suspend fun addTaskWithCategories(task: TaskTbl, categories: List<CategoryTbl>) {
         val taskId = addTask(task)
         for (category in categories) {
-            addTaskCategoryRef(TaskCategoryRef(tId = taskId, cId = category.categoryId))
+            addTaskCategoryRef(TaskCategoryRef(tId = taskId, cId = category.id))
         }
     }
 }

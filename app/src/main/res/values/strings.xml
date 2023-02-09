@@ -3,4 +3,14 @@
 
     <string name="tasks">Tasks</string>
     <string name="new_task">New Task</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
+    <string name="create_task">Create Task</string>
+    <string name="error_missed_field">Please fill all missed values</string>
+    <string name="error_category_required">Please select at least one category</string>
+    <string name="error_invalid_end_time">End Time is invalid</string>
 </resources>

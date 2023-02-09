@@ -1,5 +1,6 @@
 package com.test.todo.presentation
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import com.test.todo.databinding.ActivityMainBinding
 import com.test.todo.presentation.base.BaseActivity
@@ -10,5 +11,10 @@ class MainActivity: BaseActivity<ActivityMainBinding>() {
     
     override fun inflate(inflater: LayoutInflater): ActivityMainBinding {
         return ActivityMainBinding.inflate(inflater)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mainViewModel.initApp()
     }
 }

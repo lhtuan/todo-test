@@ -1,6 +1,7 @@
 package com.test.todo.data.local
 
 import androidx.room.RoomDatabase
+import com.test.todo.data.local.dao.CategoryDao
 import com.test.todo.data.local.dao.TaskDao
 import com.test.todo.data.local.tables.CategoryTbl
 import com.test.todo.data.local.tables.TaskCategoryRef
@@ -16,4 +17,5 @@ import com.test.todo.data.local.tables.TaskTbl
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun taskDao(): TaskDao
+    abstract fun categoryDao(): CategoryDao
 }

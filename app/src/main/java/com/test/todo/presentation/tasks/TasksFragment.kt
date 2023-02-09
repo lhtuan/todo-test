@@ -18,7 +18,7 @@ import java.util.Calendar
 
 class TasksFragment : BaseFragment<FragmentTasksBinding>() {
     private val viewModel by viewModel<TaskViewModel>()
-    private val userAdapter = TaskAdapter()
+    private val taskAdapter = TaskAdapter()
     private val dateSelectorAdapter = DateSelectorAdapter().apply {
         onDateSelected = {
             viewModel.setSelectedDate(it)
@@ -33,7 +33,7 @@ class TasksFragment : BaseFragment<FragmentTasksBinding>() {
         super.onViewCreated(view, savedInstanceState)
         with(binding.rvUsers) {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = userAdapter
+            adapter = taskAdapter
         }
 
         binding.apply {
@@ -44,15 +44,14 @@ class TasksFragment : BaseFragment<FragmentTasksBinding>() {
 
             btnAdd.setOnClickListener { findNavController().navigate(R.id.action_task_to_new) }
         }
-
-
-        observe(viewModel.tasks, ::bindUsers)
+        
+        observe(viewModel.tasks, ::bindTasks)
         observe(viewModel.dates, ::bindDates)
     }
 
-    private fun bindUsers(users: ResultState<List<Task>>?) {
+    private fun bindTasks(users: ResultState<List<Task>>?) {
         users?.data?.let {
-            userAdapter.items = it.toMutableList()
+            taskAdapter.items = it.toMutableList()
         }
     }
 
@@ -62,4 +61,8 @@ class TasksFragment : BaseFragment<FragmentTasksBinding>() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadTasks()
+    }
 }

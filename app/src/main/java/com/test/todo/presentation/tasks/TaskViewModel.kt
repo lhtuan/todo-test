@@ -12,10 +12,9 @@ import kotlinx.coroutines.flow.StateFlow
 import java.util.*
 
 class TaskViewModel(
-    scope: CoroutineScope?,
     private val getTasksUseCase: GetTasksUseCase,
     private val getDateSelectorUseCase: GetDateSelectorUseCase
-) : BaseViewModel(scope) {
+) : BaseViewModel() {
     private val _tasks = MutableStateFlow<ResultState<List<Task>>?>(
         ResultState.Loading()
     )
@@ -32,7 +31,6 @@ class TaskViewModel(
 
     init {
         loadSelectedDates()
-        loadTasks()
     }
 
     fun loadTasks() {

@@ -3,6 +3,7 @@ package com.test.todo.data.local
 import com.test.todo.data.local.dao.TaskDao
 import com.test.todo.data.mapping.toModel
 import com.test.todo.data.mapping.toTable
+import com.test.todo.domain.Const
 import com.test.todo.domain.models.ResultState
 import com.test.todo.domain.models.Task
 import com.test.todo.domain.repositories.localSource.TaskLocalSource
@@ -13,7 +14,7 @@ class TaskLocalSourceImpl(
     private val taskDao: TaskDao
 ) : TaskLocalSource {
     companion object {
-        val dateFormat = SimpleDateFormat("ddMMyy", Locale.ENGLISH)
+        val dateFormat = SimpleDateFormat(Const.TASK_DATE_FORMAT, Locale.ENGLISH)
     }
 
     override suspend fun getTasks(date: Calendar): ResultState<List<Task>> {

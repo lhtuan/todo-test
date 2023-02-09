@@ -5,7 +5,7 @@ import com.test.todo.data.local.tables.TaskWithCategories
 import com.test.todo.domain.models.Task
 
 fun TaskWithCategories.toModel() = Task(
-    id = task.taskId,
+    id = task.id,
     title = task.title,
     date = task.date,
     from = task.from,
@@ -15,7 +15,7 @@ fun TaskWithCategories.toModel() = Task(
 )
 
 fun Task.toTable() = TaskTbl(
-    taskId = -1L,
+    id = 0L,
     title = title,
     date = date,
     from = from,

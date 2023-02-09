@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="hintEnabled">true</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="boxBackgroundColor">#FFF</item>
+        <item name="boxStrokeErrorColor">@android:color/holo_red_light</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/text_box_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/text_box_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/text_box_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/text_box_radius</item>
+        <item name="errorTextColor">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/bg_button</item>
+    </style>
+</resources>

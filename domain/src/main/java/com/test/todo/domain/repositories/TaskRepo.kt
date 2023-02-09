@@ -9,7 +9,8 @@ class TaskRepo(
     private val taskLocalSource: TaskLocalSource
 ) {
     suspend fun getTasks(date: Calendar): ResultState<List<Task>> {
-        //TODO add remote source here if needed
         return taskLocalSource.getTasks(date)
     }
+
+    suspend fun addTask(task: Task) = taskLocalSource.addTask(task)
 }

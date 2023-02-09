@@ -16,9 +16,9 @@ data class TaskCategoryRef(
 data class TaskWithCategories(
     @Embedded val task: TaskTbl,
     @Relation(
-        parentColumn = "taskId",
+        parentColumn = "id",
         entity = CategoryTbl::class,
-        entityColumn = "categoryId",
+        entityColumn = "id",
         associateBy = Junction(
             TaskCategoryRef::class,
             parentColumn = "tId",
